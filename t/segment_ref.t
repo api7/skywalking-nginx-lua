@@ -10,7 +10,7 @@ no_root_location();
 log_level('info');
 
 our $HttpConfig = qq{
-    lua_package_path "$pwd/lib/skywalking/?.lua;;";
+    lua_package_path "$pwd/lib/?.lua;;";
     error_log logs/error.log debug;
     resolver 114.114.114.114 8.8.8.8 ipv6=off;
     lua_shared_dict tracing_buffer 100m;
@@ -25,7 +25,7 @@ __DATA__
 --- config
     location /t {
         content_by_lua_block {
-            local SegmentRef = require('segment_ref')
+            local SegmentRef = require('skywalking.segment_ref')
             local ref = SegmentRef.fromSW6Value('1-My40LjU=-MS4yLjM=-4-1-1-IzEyNy4wLjAuMTo4MDgw-Iy9wb3J0YWw=-MTIz')
             ngx.say(ref.trace_id)
             ngx.say(ref.segment_id)
@@ -64,7 +64,7 @@ nil
 --- config
     location /t {
         content_by_lua_block {
-            local SegmentRef = require('segment_ref')
+            local SegmentRef = require('skywalking.segment_ref')
             local ref = SegmentRef.new()
             ref.trace_id = {3, 4, 5}
             ref.segment_id = {1, 2, 3}
@@ -91,7 +91,7 @@ GET /t
 --- config
     location /t {
         content_by_lua_block {
-            local SegmentRef = require('segment_ref')
+            local SegmentRef = require('skywalking.segment_ref')
             local cjson = require("cjson")
 
             local ref = SegmentRef.new()

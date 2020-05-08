@@ -1,13 +1,13 @@
 package = "skywalking-nginx-lua"
-version = "1.0-0"
+version = "0.1"
 source = {
-   url = "git://github.com/apache/skywalking-nginx-lua",
-   branch = "master",
+   url = "git://github.com/api7/skywalking-nginx-lua",
+   branch = "0.1",
 }
 
 description = {
    summary = "The Nginx Lua agent for Apache SkyWalking",
-   homepage = "https://github.com/apache/skywalking-nginx-lua",
+   homepage = "https://github.com/api7/skywalking-nginx-lua",
    license = "Apache License 2.0"
 }
 

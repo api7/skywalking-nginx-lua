@@ -14,15 +14,9 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 --
-local Util = require('util')
-local Base64 = require('dependencies/base64')
-local encode_base64 = Base64.encode
-local decode_base64 = Base64.decode
-
-if Util.is_ngx_lua then
-    encode_base64 = ngx.encode_base64
-    decode_base64 = ngx.decode_base64
-end
+local Util = require('skywalking.util')
+local encode_base64 = ngx.encode_base64
+local decode_base64 = ngx.decode_base64
 
 local _M = {}
 -- local SegmentRef = {

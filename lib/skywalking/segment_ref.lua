@@ -14,6 +14,7 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 --
+local ngx_re = require("ngx.re")
 local Util = require('skywalking.util')
 local encode_base64 = ngx.encode_base64
 local decode_base64 = ngx.decode_base64
@@ -50,7 +51,7 @@ end
 function _M.fromSW6Value(value)
     local ref = _M.new()
 
-    local parts = Util.split(value, '-')
+    local parts = ngx_re.split(value, '-')
     if #parts ~= 9 then
         return nil
     end

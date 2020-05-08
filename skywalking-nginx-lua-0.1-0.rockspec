@@ -1,4 +1,4 @@
-package = "skywalking-nginx-lua"
+package = "skywalking-nginx-lua-plugin"
 version = "0.1"
 source = {
    url = "git://github.com/api7/skywalking-nginx-lua",

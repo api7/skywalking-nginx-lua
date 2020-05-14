@@ -1,5 +1,5 @@
 package = "skywalking-nginx-lua-plugin"
-version = "1.0"
+version = "1.0-0"
 source = {
    url = "git://github.com/api7/skywalking-nginx-lua",
    branch = "1.0",
